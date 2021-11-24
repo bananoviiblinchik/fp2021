@@ -23,6 +23,6 @@ cycleShift1::([Integer],Int) -> [Integer]
 cycleShift1 (xs, n::Int) = if n == 0 then xs
     else cycleShift1(tail(xs) ++ [head(xs)], (n-1))
 
--- cycleShift2::([Integer],Int) -> [Integer]  
--- cycleShift2 (xs, n::Int) = if n == 0 then xs
---     else cycleShift2(tail(xs) ++ xs[0], (n-1))
+cycleShift2::([Integer],Int) -> [Integer]  
+cycleShift2 (x:xs, n::Int) = if n == 0 then [x]++xs
+    else cycleShift2(xs++[x], (n-1))
